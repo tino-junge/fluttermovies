@@ -4,13 +4,14 @@ import 'dart:convert';
 import 'package:http/http.dart' as http;
 
 import 'models.dart';
+import 'config.dart';
 
 main() {
   getMovies();
 }
 
 Future<Stream<Movie>> getMovies() async {
-  var apiKey = '<YOUR_API_KEY>';
+  var apiKey = config.apiKey;
   var apiUrl = 'https://api.themoviedb.org/3/discover/movie';
   var params =
       '?primary_release_date.gte=2018-03-15&primary_release_date.lte=2018-04-07';
